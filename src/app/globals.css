@@ -3,15 +3,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
 }
 
+/* ダークモード用 */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
