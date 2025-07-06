@@ -124,7 +124,7 @@ import { formatDate } from '../utils/formatDate';
 4. 静的解析、フォーマット、テスト
 
 ### 詳細要件の読み込み
-- "docs/requirements.md"に記載の詳細要件を読み込む
+- "docs/requirements/requirements.md"に記載の詳細要件を読み込む
 - 要件に基づいて実装方針を確認。疑問点がある場合はタスク分割を始める前に確認すること
 
 ### タスク分割
