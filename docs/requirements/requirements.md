@@ -4,7 +4,8 @@
 
 ### 共通
 #### デザイン
-- サイト全体の色はTailWind CSSのsky-500を基調とする
+- サイト全体の色はTailWind CSSのorange-500を基調とする
+- テキストの色はTailWind CSSのorange-50を使用する
 - フォントはNoto Sans JPを使用する
 - エラーメッセージは赤色で表示する
 - 成功メッセージは緑色で表示する
