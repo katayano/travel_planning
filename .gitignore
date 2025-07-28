@@ -55,4 +55,7 @@ docker-compose.override.yml
 prisma/migrations/*
 !prisma/migrations/.gitkeep
 
-create-issues.sh
+local_tool/*
+
+# Prisma
+/src/generated/prisma
