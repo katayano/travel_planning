@@ -10,6 +10,21 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // ファイルを除外
+  {
+    ignores: [
+      "src/generated/**",
+      "prisma/migrations/**",
+      "node_modules/**",
+      ".next/**",
+      "dist/**",
+      "build/**",
+      "*.min.js",
+      "coverage/**",
+      ".env*",
+    ],
+  },
+
   // FlatCompatの形式に変換
   ...compat.config({
     extends: ['next/core-web-vitals', 'next/typescript', 'next', 'prettier']
