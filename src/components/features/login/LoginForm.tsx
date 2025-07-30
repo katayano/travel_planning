@@ -2,6 +2,8 @@
 
 import React, { useState, useCallback } from "react";
 
+import Input from "@/components/ui/Input";
+
 import type { LoginFormData } from "@/types/auth";
 
 interface LoginFormProps {
@@ -44,52 +46,32 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
         <div className="w-full max-w-md mx-auto font-['Noto_Sans_JP']">
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* ユーザー名入力フィールド */}
-                <div className="space-y-2">
-                    <label htmlFor="username" className="block text-sm font-medium text-orange-50">
-                        ユーザー名
-                    </label>
-                    <input
-                        id="username"
-                        name="username"
-                        type="text"
-                        value={formData.username}
-                        onChange={handleInputChange}
-                        disabled={loading}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 transition-colors duration-200 
-              bg-white text-gray-900 placeholder-gray-500
-              focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent
-              disabled:bg-gray-100 disabled:cursor-not-allowed
-              hover:border-orange-300
-              sm:px-3 sm:py-2 sm:text-sm"
-                        placeholder="ユーザー名を入力してください"
-                        autoComplete="username"
-                        required
-                    />
-                </div>
+                <Input
+                    id="username"
+                    name="username"
+                    type="text"
+                    label="ユーザー名"
+                    value={formData.username}
+                    onChange={handleInputChange}
+                    disabled={loading}
+                    placeholder="ユーザー名を入力してください"
+                    autoComplete="username"
+                    required
+                />
 
                 {/* パスワード入力フィールド */}
-                <div className="space-y-2">
-                    <label htmlFor="password" className="block text-sm font-medium text-orange-50">
-                        パスワード
-                    </label>
-                    <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        disabled={loading}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 transition-colors duration-200 
-              bg-white text-gray-900 placeholder-gray-500
-              focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent
-              disabled:bg-gray-100 disabled:cursor-not-allowed
-              hover:border-orange-300
-              sm:px-3 sm:py-2 sm:text-sm"
-                        placeholder="パスワードを入力してください"
-                        autoComplete="current-password"
-                        required
-                    />
-                </div>
+                <Input
+                    id="password"
+                    name="password"
+                    type="password"
+                    label="パスワード"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    disabled={loading}
+                    placeholder="パスワードを入力してください"
+                    autoComplete="current-password"
+                    required
+                />
 
                 {/* API エラーメッセージ */}
                 {error && (
@@ -105,10 +87,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
                     className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 
             focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
             sm:py-2 sm:px-3 sm:text-sm
-            ${loading
-                            ? "bg-gray-400 cursor-not-allowed text-gray-200"
-                            : "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-orange-50 shadow-lg hover:shadow-xl"
-                        }`}
+            ${
+                loading
+                    ? "bg-gray-400 cursor-not-allowed text-gray-200"
+                    : "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-orange-50 shadow-lg hover:shadow-xl"
+            }`}
                     aria-disabled={loading}
                 >
                     {loading ? (
