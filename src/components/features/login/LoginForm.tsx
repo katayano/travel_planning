@@ -1,19 +1,25 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useActionState } from "react";
 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-
 import type { LoginFormData } from "@/types/auth";
 
+import { authenticate } from "@/lib/actions/login";
+import { useSearchParams } from "next/navigation";
+
 interface LoginFormProps {
-    onSubmit: (data: LoginFormData) => Promise<void>;
     loading?: boolean;
-    error?: string;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") || "/travel-planning";
+    const [errorMessage, formAction, isPending] = useActionState(
+        authenticate,
+        undefined
+    );
     const [formData, setFormData] = useState<LoginFormData>({
         username: "",
         password: "",
@@ -29,23 +35,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
         }));
     }, []);
 
-    const handleSubmit = useCallback(
-        async (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault();
-
-            try {
-                await onSubmit(formData);
-            } catch (err) {
-                // エラーハンドリングは親コンポーネントで行う
-                console.error("Login form submission error:", err);
-            }
-        },
-        [formData, onSubmit],
-    );
-
     return (
         <div className="w-full max-w-md mx-auto font-['Noto_Sans_JP']">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={formAction} className="space-y-6">
                 {/* ユーザー名入力フィールド */}
                 <Input
                     id="username"
@@ -75,13 +67,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading = false, error 
                 />
 
                 {/* API エラーメッセージ */}
-                {error && (
+                {errorMessage && (
                     <div className="p-3 rounded-lg bg-red-50 border border-red-200" role="alert">
-                        <p className="text-sm text-red-600">{error}</p>
+                        <p className="text-sm text-red-600">{errorMessage}</p>
                     </div>
                 )}
 
                 {/* ログインボタン */}
+                <input type="hidden" name="redirectTo" value={callbackUrl} />
                 <Button
                     type="submit"
                     loading={loading}
