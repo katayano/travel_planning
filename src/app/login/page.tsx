@@ -1,5 +1,6 @@
-import LoginForm from "@/components/features/login/LoginForm";
 import { Metadata } from "next";
+
+import LoginForm from "@/components/features/login/LoginForm";
 
 export const metadata: Metadata = {
     title: "ログイン | 旅行計画アプリ",
@@ -20,7 +21,6 @@ export default function LoginPage() {
                         ログイン
                     </h2>
 
-                    {/* ログインフォームコンポーネントは次のタスクで実装 */}
                     <LoginForm />
                 </div>
 

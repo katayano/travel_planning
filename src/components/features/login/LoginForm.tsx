@@ -1,13 +1,14 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import React, { useState, useCallback, useActionState } from "react";
 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import { authenticate } from "@/lib/actions/login";
+
 import type { LoginFormData } from "@/types/auth";
 
-import { authenticate } from "@/lib/actions/login";
-import { useSearchParams } from "next/navigation";
 
 interface LoginFormProps {
     loading?: boolean;
@@ -16,10 +17,7 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/travel-planning";
-    const [errorMessage, formAction, isPending] = useActionState(
-        authenticate,
-        undefined
-    );
+    const [errorMessage, formAction, isPending] = useActionState(authenticate, undefined);
     const [formData, setFormData] = useState<LoginFormData>({
         username: "",
         password: "",
@@ -82,6 +80,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
                     className="w-full"
                     variant="primary"
                     size="medium"
+                    aria-disabled={isPending}
                 >
                     {loading ? "ログイン中..." : "ログイン"}
                 </Button>
