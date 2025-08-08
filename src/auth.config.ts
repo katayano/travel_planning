@@ -22,7 +22,8 @@ export const authConfig = {
             if (isOnTravelPlanningPage) {
                 // 旅行計画ページにアクセスするには認証が必要
                 if (isLoggedIn) return true;
-                return false;   // 未認証ユーザーはログインページにリダイレクト
+                // 未認証ユーザーはログインページにリダイレクト
+                return false;
             } else if (isLoggedIn) {
                 // 認証済みユーザーは旅行計画ページにリダイレクト
                 return Response.redirect(new URL("/travel-planning", nextUrl));
