@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import React, { useState, useCallback, useActionState } from "react";
 
 import Button from "@/components/ui/Button";
+import Alert from "@/components/ui/Alert";
 import Input from "@/components/ui/Input";
 import { authenticate } from "@/lib/actions/login";
 
@@ -66,11 +67,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
 
                 {/* API エラーメッセージ */}
                 {errorMessage && (
-                    <div className="p-3 rounded-lg bg-red-50 border border-red-200" role="alert">
-                        <p className="text-sm text-red-600">{errorMessage}</p>
-                    </div>
+                    <Alert
+                        message={errorMessage}
+                        type="error"
+                    />
                 )}
-
                 {/* ログインボタン */}
                 <input type="hidden" name="redirectTo" value={callbackUrl} />
                 <Button
