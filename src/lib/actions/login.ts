@@ -12,7 +12,7 @@ import { signIn } from "@/auth";
  * @param formData フォームから送信されたデータ
  * @returns 認証失敗時はエラーメッセージ、成功時は自動リダイレクト
  */
-export async function authenticate(prevState: string | undefined, formData: FormData) {
+export async function authenticate(prevState: string | undefined, formData: FormData): Promise<string | undefined> {
     try {
         // NextAuth.jsのsignIn関数でCredentials認証を実行
         await signIn("credentials", formData);
