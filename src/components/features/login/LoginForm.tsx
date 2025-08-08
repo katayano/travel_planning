@@ -35,7 +35,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
     }, []);
 
     return (
-        <div className="w-full max-w-md mx-auto font-['Noto_Sans_JP']">
+        <div className="w-full max-w-md mx-auto">
             <form action={formAction} className="space-y-6">
                 {/* ユーザー名入力フィールド */}
                 <Input

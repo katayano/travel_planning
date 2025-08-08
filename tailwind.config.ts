@@ -56,11 +56,7 @@ const config: Config = {
                     950: "#431407",
                 },
             },
-            fontFamily: {
-                sans: ["var(--font-sans)", "sans-serif"],
-                heading: ["var(--font-heading)", "serif"],
-                mono: ["var(--font-mono)", "monospace"],
-            },
+            // フォントはlayout.tsxでnext/fontを設定
         },
     },
     plugins: [],
