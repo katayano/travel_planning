@@ -76,12 +76,48 @@ describe("LoginForm", () => {
         expect(passwordInput).toBeDisabled();
     });
 
-    // TODO: エラーメッセージのテストは useActionState のモックが必要なため後で作成
-    // 実際の認証失敗テストは手動で以下を確認:
-    // 1. 間違ったユーザー名・パスワードで「ユーザー名かパスワードが誤っています。」が表示される
-    // 2. エラーメッセージが赤色のアラートボックスに表示される
-    // 3. フォーム入力値がクリアされない（ユーザビリティのため）
-    // 4. ボタンの状態が正常に戻る
+    it("エラーメッセージが表示される", () => {
+        const errorMessage = "ユーザー名かパスワードが誤っています。";
+        render(<LoginForm error={errorMessage} />);
+
+        const alert = screen.getByRole("alert");
+        expect(alert).toBeInTheDocument();
+        expect(alert).toHaveTextContent(errorMessage);
+        expect(alert).toHaveClass("bg-red-50", "text-red-900", "border-red-200");
+    });
+
+    it("エラーなしの場合はアラートが表示されない", () => {
+        render(<LoginForm />);
+
+        expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    });
+
+    it("空文字列のエラーの場合はアラートが表示されない", () => {
+        render(<LoginForm error="" />);
+
+        expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    });
+
+    it("エラー状態でもフォーム入力が可能", () => {
+        const errorMessage = "ユーザー名かパスワードが誤っています。";
+        render(<LoginForm error={errorMessage} />);
+
+        const usernameInput = screen.getByLabelText(/ユーザー名/);
+        const passwordInput = screen.getByLabelText(/パスワード/);
+
+        expect(usernameInput).not.toBeDisabled();
+        expect(passwordInput).not.toBeDisabled();
+        expect(usernameInput).toHaveValue("");
+        expect(passwordInput).toHaveValue("");
+    });
+
+    it("エラー状態でも送信ボタンが有効", () => {
+        const errorMessage = "ユーザー名かパスワードが誤っています。";
+        render(<LoginForm error={errorMessage} />);
+
+        const submitButton = screen.getByRole("button", { name: /ログイン/ });
+        expect(submitButton).not.toBeDisabled();
+    });
 
     it("必須属性が設定されている", () => {
         render(<LoginForm />);

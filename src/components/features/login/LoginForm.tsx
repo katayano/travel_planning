@@ -13,9 +13,10 @@ import type { LoginFormData } from "@/types/auth";
 
 interface LoginFormProps {
     loading?: boolean;
+    error?: string;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ loading = false, error }) => {
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/travel-planning";
     const [errorMessage, formAction, isPending] = useActionState(authenticate, undefined);
@@ -23,6 +24,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
         username: "",
         password: "",
     });
+
+    // プロパティとして渡されたerrorを優先、なければuseActionStateのerrorMessageを使用
+    const displayError = error || errorMessage;
 
     const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -66,9 +70,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false }) => {
                 />
 
                 {/* API エラーメッセージ */}
-                {errorMessage && (
+                {displayError && (
                     <Alert
-                        message={errorMessage}
+                        message={displayError}
                         type="error"
                     />
                 )}
