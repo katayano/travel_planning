@@ -1,8 +1,5 @@
 import React from "react";
-
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    label?: string;
-}
+import type { InputProps } from "@/types/ui";
 
 const Input: React.FC<InputProps> = ({
     label,

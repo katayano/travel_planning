@@ -1,7 +1,13 @@
-// ログイン関連の型定義
+/**
+ * ログイン・認証関連の型定義
+ */
 
-// フォーム入力データ型
+/**
+ * ログインフォームの入力データ
+ */
 export interface LoginFormData {
+    /** ユーザー名 */
     username: string;
+    /** パスワード */
     password: string;
 }

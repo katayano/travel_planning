@@ -1,17 +1,5 @@
 import React from "react";
-
-interface AlertProps {
-    /** メッセージのテキスト */
-    message: string;
-    /** メッセージを表示するかどうか */
-    show?: boolean;
-    /** アラートタイプ（エラー、成功、警告など） */
-    type?: "error" | "success" | "warning" | "info";
-    /** カスタムクラス名 */
-    className?: string;
-    /** アクセシビリティのためのaria-live属性 */
-    ariaLive?: "polite" | "assertive" | "off";
-}
+import type { AlertProps } from "@/types/ui";
 
 /**
  * アラートメッセージ表示コンポーネント
