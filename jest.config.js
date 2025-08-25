@@ -7,7 +7,7 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.js', '<rootDir>/src/lib/singleton.ts'],
     testEnvironment: 'jsdom',
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
