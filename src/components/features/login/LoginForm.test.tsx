@@ -83,7 +83,7 @@ describe("LoginForm", () => {
         const alert = screen.getByRole("alert");
         expect(alert).toBeInTheDocument();
         expect(alert).toHaveTextContent(errorMessage);
-        expect(alert).toHaveClass("bg-red-50", "text-red-900", "border-red-200");
+        expect(alert).toHaveClass("bg-red-50", "text-red-600", "border-red-200");
     });
 
     it("エラーなしの場合はアラートが表示されない", () => {
