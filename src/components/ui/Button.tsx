@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     // バリアントスタイル
     const variantStyles = {
-        primary: loading
+        primary: (loading || disabled)
             ? "bg-gray-400 cursor-not-allowed text-gray-200"
             : "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-orange-50 shadow-lg hover:shadow-xl",
         secondary:
