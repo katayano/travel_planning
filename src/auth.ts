@@ -22,7 +22,7 @@ export const { auth, signIn, signOut } = NextAuth({
             async authorize(credentials) {
                 // 入力値のバリデーション
                 const parsedCredentials = z
-                    .object({ username: z.string(), password: z.string().min(6) })
+                    .object({ username: z.string().min(3).max(50), password: z.string().min(8).max(20) })
                     .safeParse(credentials);
 
                 if (parsedCredentials.success) {

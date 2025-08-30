@@ -15,6 +15,7 @@ import { signIn } from "@/auth";
 export async function authenticate(prevState: string | undefined, formData: FormData): Promise<string | undefined> {
     try {
         // NextAuth.jsのsignIn関数でCredentials認証を実行
+        // バリデーションはauth.tsのzodスキーマで実行される
         await signIn("credentials", formData);
     } catch (error) {
         // NextAuth.jsの認証エラーをハンドリング
