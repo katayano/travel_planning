@@ -3,8 +3,8 @@
 import { useSearchParams } from "next/navigation";
 import React, { useState, useCallback, useActionState } from "react";
 
-import Button from "@/components/ui/Button";
 import Alert from "@/components/ui/Alert";
+import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { authenticate } from "@/lib/actions/login";
 

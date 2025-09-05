@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import Button from './Button';
+
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 const meta = {
     title: 'UI/Button',

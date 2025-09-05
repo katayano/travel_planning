@@ -2,8 +2,9 @@
  * Prisma Client Mock
  * https://www.prisma.io/docs/orm/prisma-client/testing/unit-testing
  */
-import { PrismaClient } from '@/generated/prisma'
 import { mockDeep, mockReset, DeepMockProxy } from 'jest-mock-extended'
+
+import { PrismaClient } from '@/generated/prisma'
 
 import prisma from './prisma'
 

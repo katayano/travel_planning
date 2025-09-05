@@ -1,5 +1,5 @@
-import { getUser } from "./user";
 import { prismaMock } from "./singleton";
+import { getUser } from "./user";
 
 describe('getUser', () => {
     it('should return user data', async () => {
