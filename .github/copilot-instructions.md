@@ -1,5 +1,8 @@
 # Copilot Instructions
 
+## ツール
+- パッケージ管理はpnpmを使用
+
 ## コーディング規約
 
 ### 基本原則
@@ -153,3 +156,7 @@ import { formatDate } from '../utils/formatDate';
   - コードをGitHubにプッシュすること
   - GitHubのIssueに作業内容を記載すること
   - GitHubのPull Requestを作成すること
+
+## コマンドの実行
+- 必要に応じて、以下のコマンドを実行すること
+  - `pnpm dev` - 開発サーバーの起動
