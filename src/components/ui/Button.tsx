@@ -1,4 +1,5 @@
 import React from "react";
+
 import type { ButtonProps } from "@/types/ui";
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,9 +13,10 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     // バリアントスタイル
     const variantStyles = {
-        primary: (loading || disabled)
-            ? "bg-gray-400 cursor-not-allowed text-gray-200"
-            : "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-orange-50 shadow-lg hover:shadow-xl",
+        primary:
+            loading || disabled
+                ? "bg-gray-400 cursor-not-allowed text-gray-200"
+                : "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-orange-50 shadow-lg hover:shadow-xl",
         secondary:
             "bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-50 active:bg-orange-100",
         danger: "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white shadow-lg hover:shadow-xl",

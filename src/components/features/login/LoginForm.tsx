@@ -3,13 +3,12 @@
 import { useSearchParams } from "next/navigation";
 import React, { useState, useCallback, useActionState } from "react";
 
-import Button from "@/components/ui/Button";
 import Alert from "@/components/ui/Alert";
+import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { authenticate } from "@/lib/actions/login";
 
 import type { LoginFormData } from "@/types/auth";
-
 
 interface LoginFormProps {
     loading?: boolean;
@@ -70,12 +69,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false, error }) => {
                 />
 
                 {/* API エラーメッセージ */}
-                {displayError && (
-                    <Alert
-                        message={displayError}
-                        type="error"
-                    />
-                )}
+                {displayError && <Alert message={displayError} type="error" />}
                 {/* ログインボタン */}
                 <input type="hidden" name="redirectTo" value={callbackUrl} />
                 <Button

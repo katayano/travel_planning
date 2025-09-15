@@ -1,5 +1,8 @@
 # Copilot Instructions
 
+## ツール
+- パッケージ管理はpnpmを使用
+
 ## コーディング規約
 
 ### 基本原則
@@ -141,9 +144,11 @@ import { formatDate } from '../utils/formatDate';
 - タスクをGithubのIssueに記載した内容に従って、コーディングを行う
 - タスクごとにブランチを切る
 - コーディング規約に従う
+- コーディングを完了した段階で、コードをコミットすること
 
 ### 静的解析、フォーマット、テスト
 - ESLintとPrettierを使用
+- 静的解析、フォーマットを実行し、エラーがないことを確認した段階で、コードをコミットすること
 - テストはJestとReact Testing Libraryを使用
 
 ### 作業の完了
@@ -153,3 +158,7 @@ import { formatDate } from '../utils/formatDate';
   - コードをGitHubにプッシュすること
   - GitHubのIssueに作業内容を記載すること
   - GitHubのPull Requestを作成すること
+
+## コマンドの実行
+- 必要に応じて、以下のコマンドを実行すること
+  - `pnpm dev` - 開発サーバーの起動

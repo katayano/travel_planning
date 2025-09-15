@@ -1,10 +1,11 @@
+import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
-import { authConfig } from "./auth.config";
 import Credentials from "next-auth/providers/credentials";
 import { z } from "zod";
-import bcrypt from "bcryptjs";
 
 import { getUser } from "@/lib/user";
+
+import { authConfig } from "./auth.config";
 
 /**
  * NextAuth.js の設定
@@ -22,7 +23,10 @@ export const { auth, signIn, signOut } = NextAuth({
             async authorize(credentials) {
                 // 入力値のバリデーション
                 const parsedCredentials = z
-                    .object({ username: z.string().min(3).max(50), password: z.string().min(8).max(20) })
+                    .object({
+                        username: z.string().min(3).max(50),
+                        password: z.string().min(8).max(20),
+                    })
                     .safeParse(credentials);
 
                 if (parsedCredentials.success) {
