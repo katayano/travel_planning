@@ -1,4 +1,5 @@
 import { authenticate } from './login';
+import { signIn } from '@/auth';
 
 // next-authを軽量にモック
 jest.mock('next-auth', () => ({
@@ -17,14 +18,11 @@ jest.mock('@/auth', () => ({
 }));
 
 // モック関数の型定義
-const mockSignIn = jest.fn() as jest.MockedFunction<any>;
+const mockSignIn = signIn as jest.MockedFunction<any>;
 
 describe('authenticate', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        // モック関数をセットアップ
-        const authModule = require('@/auth');
-        authModule.signIn = mockSignIn;
     });
 
     it('有効な認証情報で成功する', async () => {

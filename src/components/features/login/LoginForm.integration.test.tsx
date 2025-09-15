@@ -4,7 +4,10 @@
  */
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useActionState } from 'react';
+
 import LoginForm from '@/components/features/login/LoginForm';
+import { authenticate } from '@/lib/actions/login';
 
 // 必要なモック
 
@@ -27,8 +30,8 @@ jest.mock('react', () => ({
   useActionState: jest.fn(),
 }));
 
-const mockAuthenticate = require("@/lib/actions/login").authenticate as jest.MockedFunction<any>;
-const mockUseActionState = require('react').useActionState as jest.MockedFunction<any>;
+const mockAuthenticate = authenticate as jest.MockedFunction<any>;
+const mockUseActionState = useActionState as jest.MockedFunction<any>;
 
 describe('Authentication Flow Integration Tests', () => {
   beforeEach(() => {
