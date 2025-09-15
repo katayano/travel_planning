@@ -1,8 +1,8 @@
 import { prismaMock } from "./singleton";
 import { getUser } from "./user";
 
-describe('getUser', () => {
-    it('should return user data', async () => {
+describe("getUser", () => {
+    it("should return user data", async () => {
         const username = "testuser";
         const mockedUser = {
             id: "1",
@@ -24,7 +24,7 @@ describe('getUser', () => {
         });
     });
 
-    it('should return null if user not found', async () => {
+    it("should return null if user not found", async () => {
         const username = "nonexistentuser";
 
         prismaMock.user.findUnique.mockResolvedValue(null);
@@ -32,7 +32,7 @@ describe('getUser', () => {
         await expect(getUser(username)).resolves.toBeNull();
     });
 
-    it('should throw error on database failure', async () => {
+    it("should throw error on database failure", async () => {
         const username = "testuser";
 
         prismaMock.user.findUnique.mockRejectedValue(new Error("Database error"));

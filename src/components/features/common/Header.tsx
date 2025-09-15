@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
-import { logout } from '@/lib/actions/logout';
+import { logout } from "@/lib/actions/logout";
 
 interface HeaderProps {
     /** サイト名 */
@@ -13,9 +13,7 @@ interface HeaderProps {
 /**
  * ログイン後の画面で表示されるヘッダーコンポーネント
  */
-const Header: React.FC<HeaderProps> = ({
-    siteName = 'Travel Planning'
-}) => {
+const Header: React.FC<HeaderProps> = ({ siteName = "Travel Planning" }) => {
     const handleLogout = async () => {
         await logout();
     };

@@ -10,7 +10,6 @@ import { authenticate } from "@/lib/actions/login";
 
 import type { LoginFormData } from "@/types/auth";
 
-
 interface LoginFormProps {
     loading?: boolean;
     error?: string;
@@ -70,12 +69,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ loading = false, error }) => {
                 />
 
                 {/* API エラーメッセージ */}
-                {displayError && (
-                    <Alert
-                        message={displayError}
-                        type="error"
-                    />
-                )}
+                {displayError && <Alert message={displayError} type="error" />}
                 {/* ログインボタン */}
                 <input type="hidden" name="redirectTo" value={callbackUrl} />
                 <Button

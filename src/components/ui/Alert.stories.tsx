@@ -1,37 +1,38 @@
-import Alert from './Alert';
+import Alert from "./Alert";
 
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta = {
-    title: 'UI/Alert',
+    title: "UI/Alert",
     component: Alert,
     parameters: {
-        layout: 'centered',
+        layout: "centered",
         docs: {
             description: {
-                component: 'ユーザーフィードバックメッセージを表示するアラートコンポーネントです。エラー、成功、警告、情報の4つのタイプをサポートしています。',
+                component:
+                    "ユーザーフィードバックメッセージを表示するアラートコンポーネントです。エラー、成功、警告、情報の4つのタイプをサポートしています。",
             },
         },
     },
-    tags: ['autodocs'],
+    tags: ["autodocs"],
     argTypes: {
         message: {
-            control: 'text',
-            description: '表示するメッセージ',
+            control: "text",
+            description: "表示するメッセージ",
         },
         type: {
-            control: 'select',
-            options: ['error', 'success', 'warning', 'info'],
-            description: 'アラートのタイプ',
+            control: "select",
+            options: ["error", "success", "warning", "info"],
+            description: "アラートのタイプ",
         },
         show: {
-            control: 'boolean',
-            description: 'アラートを表示するかどうか',
+            control: "boolean",
+            description: "アラートを表示するかどうか",
         },
         ariaLive: {
-            control: 'select',
-            options: ['polite', 'assertive', 'off'],
-            description: 'スクリーンリーダー用のaria-live属性',
+            control: "select",
+            options: ["polite", "assertive", "off"],
+            description: "スクリーンリーダー用のaria-live属性",
         },
     },
 } satisfies Meta<typeof Alert>;
@@ -42,92 +43,93 @@ type Story = StoryObj<typeof meta>;
 // 基本的な使用例
 export const Error: Story = {
     args: {
-        message: 'エラーが発生しました。入力内容を確認してください。',
-        type: 'error',
+        message: "エラーが発生しました。入力内容を確認してください。",
+        type: "error",
     },
 };
 
 export const Success: Story = {
     args: {
-        message: '登録が正常に完了しました。',
-        type: 'success',
+        message: "登録が正常に完了しました。",
+        type: "success",
     },
 };
 
 export const Warning: Story = {
     args: {
-        message: 'パスワードの有効期限が近づいています。',
-        type: 'warning',
+        message: "パスワードの有効期限が近づいています。",
+        type: "warning",
     },
 };
 
 export const Info: Story = {
     args: {
-        message: '新機能が追加されました。詳細はヘルプページをご確認ください。',
-        type: 'info',
+        message: "新機能が追加されました。詳細はヘルプページをご確認ください。",
+        type: "info",
     },
 };
 
 // 長いメッセージの例
 export const LongMessage: Story = {
-    name: '長いメッセージ',
+    name: "長いメッセージ",
     args: {
-        message: 'ユーザー名またはパスワードが正しくありません。アカウントがロックされている可能性があります。管理者にお問い合わせいただくか、パスワードリセット機能をご利用ください。',
-        type: 'error',
+        message:
+            "ユーザー名またはパスワードが正しくありません。アカウントがロックされている可能性があります。管理者にお問い合わせいただくか、パスワードリセット機能をご利用ください。",
+        type: "error",
     },
 };
 
 // 非表示の例
 export const Hidden: Story = {
-    name: '非表示',
+    name: "非表示",
     args: {
-        message: 'このメッセージは表示されません。',
-        type: 'info',
+        message: "このメッセージは表示されません。",
+        type: "info",
         show: false,
     },
 };
 
 // 実際の使用例
 export const LoginError: Story = {
-    name: 'ログインエラー',
+    name: "ログインエラー",
     args: {
-        message: 'ユーザー名かパスワードが誤っています。',
-        type: 'error',
+        message: "ユーザー名かパスワードが誤っています。",
+        type: "error",
     },
     parameters: {
         docs: {
             description: {
-                story: 'ログインページで表示されるエラーメッセージの例',
+                story: "ログインページで表示されるエラーメッセージの例",
             },
         },
     },
 };
 
 export const PlanCreated: Story = {
-    name: '旅行プラン作成成功',
+    name: "旅行プラン作成成功",
     args: {
-        message: '旅行プランが正常に作成されました。',
-        type: 'success',
+        message: "旅行プランが正常に作成されました。",
+        type: "success",
     },
     parameters: {
         docs: {
             description: {
-                story: '旅行プラン作成時の成功メッセージの例',
+                story: "旅行プラン作成時の成功メッセージの例",
             },
         },
     },
 };
 
 export const DataLoss: Story = {
-    name: 'データ消失警告',
+    name: "データ消失警告",
     args: {
-        message: '編集中のデータが失われる可能性があります。保存してから続行してください。',
-        type: 'warning',
+        message: "編集中のデータが失われる可能性があります。保存してから続行してください。",
+        type: "warning",
     },
     parameters: {
         docs: {
             description: {
-                story: 'データが失われる可能性がある場合の警告メッセージ',
+                story: "データが失われる可能性がある場合の警告メッセージ",
             },
         },
     },
@@ -135,10 +137,10 @@ export const DataLoss: Story = {
 
 // アクセシビリティの例
 export const AccessibilityExamples: Story = {
-    name: 'アクセシビリティ例',
+    name: "アクセシビリティ例",
     args: {
-        message: 'サンプルメッセージ',
-        type: 'info',
+        message: "サンプルメッセージ",
+        type: "info",
     },
     render: () => (
         <div className="space-y-4 max-w-md">
@@ -163,7 +165,7 @@ export const AccessibilityExamples: Story = {
     parameters: {
         docs: {
             description: {
-                story: 'スクリーンリーダー用のaria-live属性の違いを示す例',
+                story: "スクリーンリーダー用のaria-live属性の違いを示す例",
             },
         },
     },
@@ -171,10 +173,10 @@ export const AccessibilityExamples: Story = {
 
 // 全タイプの表示
 export const AllTypes: Story = {
-    name: '全タイプ',
+    name: "全タイプ",
     args: {
-        message: 'サンプルメッセージ',
-        type: 'info',
+        message: "サンプルメッセージ",
+        type: "info",
     },
     render: () => (
         <div className="space-y-4 max-w-md">
@@ -187,7 +189,7 @@ export const AllTypes: Story = {
     parameters: {
         docs: {
             description: {
-                story: 'すべてのアラートタイプを表示',
+                story: "すべてのアラートタイプを表示",
             },
         },
     },

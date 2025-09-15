@@ -5,17 +5,17 @@
 /**
  * Buttonコンポーネントのvariant
  */
-export type ButtonVariant = 'primary' | 'secondary' | 'danger';
+export type ButtonVariant = "primary" | "secondary" | "danger";
 
 /**
  * Buttonコンポーネントのsize
  */
-export type ButtonSize = 'small' | 'medium' | 'large';
+export type ButtonSize = "small" | "medium" | "large";
 
 /**
  * Alertコンポーネントのtype
  */
-export type AlertType = 'error' | 'success' | 'warning' | 'info';
+export type AlertType = "error" | "success" | "warning" | "info";
 
 /**
  * Inputコンポーネントのprops
@@ -52,5 +52,5 @@ export interface AlertProps {
     /** 追加のCSSクラス */
     className?: string;
     /** ARIA live属性 */
-    ariaLive?: 'polite' | 'assertive' | 'off';
+    ariaLive?: "polite" | "assertive" | "off";
 }

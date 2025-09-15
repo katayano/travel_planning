@@ -4,10 +4,10 @@ import type { AlertProps } from "@/types/ui";
 
 /**
  * アラートメッセージ表示コンポーネント
- * 
+ *
  * フォームバリデーションエラーや認証エラー、成功メッセージなどの
  * ユーザーフィードバックメッセージを表示するコンポーネント
- * 
+ *
  * @param message - 表示するメッセージ
  * @param show - メッセージを表示するかどうか（デフォルト: true）
  * @param type - メッセージのタイプ（デフォルト: "error"）
@@ -57,9 +57,7 @@ const Alert: React.FC<AlertProps> = ({
                 </span>
 
                 {/* メッセージテキスト */}
-                <p className="text-sm font-medium flex-1">
-                    {message}
-                </p>
+                <p className="text-sm font-medium flex-1">{message}</p>
             </div>
         </div>
     );
