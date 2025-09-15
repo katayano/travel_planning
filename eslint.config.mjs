@@ -84,6 +84,14 @@ const eslintConfig = [
         },
       ],
     },
+  },
+
+  // テストファイル専用ルール
+  {
+    files: ["**/*.test.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+    },
   }, ...storybook.configs["flat/recommended"]
 ];
 

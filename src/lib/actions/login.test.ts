@@ -1,5 +1,7 @@
-import { authenticate } from './login';
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { signIn } from '@/auth';
+
+import { authenticate } from './login';
 
 // next-authを軽量にモック
 jest.mock('next-auth', () => ({
