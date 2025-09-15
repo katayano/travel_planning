@@ -53,15 +53,15 @@ const Header: React.FC<HeaderProps> = ({
                     </div>
 
                     {/* モバイルメニューボタン（将来的な拡張用） */}
-                    <div className="md:hidden">
+                    {/* <div className="md:hidden">
                         <button
                             type="button"
                             className="bg-orange-600 hover:bg-orange-700 text-orange-50 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2"
                             aria-expanded="false"
                         >
-                            <span className="sr-only">メニューを開く</span>
-                            {/* ハンバーガーメニューアイコン */}
-                            <svg
+                            <span className="sr-only">メニューを開く</span> */}
+                    {/* ハンバーガーメニューアイコン */}
+                    {/* <svg
                                 className="h-6 w-6"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({
                                 />
                             </svg>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </header>
