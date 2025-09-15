@@ -15,6 +15,7 @@ interface HeaderProps {
  */
 const Header: React.FC<HeaderProps> = ({ siteName = "Travel Planning" }) => {
     const handleLogout = async () => {
+        // TODO: エラーハンドリングの実装（ログアウト失敗時の処理）
         await logout();
     };
 
