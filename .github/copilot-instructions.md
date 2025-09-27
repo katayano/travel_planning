@@ -142,6 +142,7 @@ import { formatDate } from '../utils/formatDate';
 
 ### コーディング
 - タスクをGithubのIssueに記載した内容に従って、コーディングを行う
+- enhancementラベルが付いたIssueを優先すること
 - タスクごとにブランチを切る
 - コーディング規約に従う
 - コーディングを完了した段階で、コードをコミットすること
