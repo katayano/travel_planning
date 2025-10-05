@@ -142,6 +142,8 @@ import { formatDate } from '../utils/formatDate';
 
 ### Issue作成
 - タスク分割の確認が取れたら、GitHubのIssueにタスク分割した内容を記載すること
+- 1タスク分を1Issueとすること
+- 複数のコマンドが必要な場合は、local_tool/create-issues.shにコマンドを記載して実行すること
 - Issueにenhancementラベルを付けること
 
 ### コーディング
