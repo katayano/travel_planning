@@ -15,9 +15,9 @@ describe("CreatePlanFloatingButton", () => {
     it("正しいリンク遷移先が設定されている", () => {
         render(<CreatePlanFloatingButton />);
 
-        // リンクが/travel-plan/createを指している
+        // リンクが/travel-planning/createを指している
         const link = screen.getByRole("link");
-        expect(link).toHaveAttribute("href", "/travel-plan/create");
+        expect(link).toHaveAttribute("href", "/travel-planning/create");
     });
 
     it("プラスアイコンが表示される", () => {
