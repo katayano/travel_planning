@@ -48,7 +48,7 @@ TOPページに画面右下固定配置の新規作成ボタンを実装し、�
 export default function CreatePlanFloatingButton() {
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <Link href="/travel-plan/create">
+  <Link href="/travel-planning/create">
         <Button variant="primary" size="medium">
           <div className="flex items-center space-x-2">
             <PlusIcon size={20} />
@@ -66,14 +66,14 @@ export default function CreatePlanFloatingButton() {
 
 #### テストケース
 1. 基本的なレンダリング確認
-2. 正しいリンク遷移先の確認（/travel-plan/create）
+2. 正しいリンク遷移先の確認（/travel-planning/create）
 3. プラスアイコンとテキストの表示確認
 4. レスポンシブ表示の確認（モバイル：アイコンのみ、デスクトップ：アイコン+テキスト）
 5. 既存Buttonコンポーネントのvariant="primary"適用確認
 6. アクセシビリティ属性の確認
 
 ### Task 3: 旅行プラン作成ページ基本構造作成
-**ファイル**: `src/app/(authenticated)/travel-plan/create/page.tsx`
+**ファイル**: `src/app/(authenticated)/travel-planning/create/page.tsx`
 
 #### 要件
 - 基本的なページ構造作成
@@ -96,7 +96,7 @@ export default function CreatePlanFloatingButton() {
 - 既存レイアウトとの調整
 
 #### 組み込み仕様
-- 遷移先: `/travel-plan/create`
+- 遷移先: `/travel-planning/create`
 - 表示内容: プラスアイコン + 「旅行プランを作成」テキスト
 - 配置: 画面右下固定
 

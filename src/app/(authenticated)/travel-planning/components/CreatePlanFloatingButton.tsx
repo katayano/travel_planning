@@ -16,7 +16,7 @@ import PlusIcon from "./PlusIcon";
 const CreatePlanFloatingButton: React.FC = () => {
     return (
         <div className="fixed bottom-6 right-6 z-50">
-            <Link href="/travel-plan/create">
+            <Link href="/travel-planning/create">
                 <Button variant="primary" size="medium">
                     <div className="flex items-center space-x-2">
                         <PlusIcon size={20} />
