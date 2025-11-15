@@ -8,15 +8,6 @@ export default async function TravelPlanningPage() {
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* 新しい旅行計画作成 */}
-                <div className="bg-white rounded-lg shadow-lg p-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-4">新しい旅行計画</h2>
-                    <p className="text-gray-600 mb-4">新しい旅行の計画を作成しましょう</p>
-                    <button className="w-full px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium">
-                        計画を作成
-                    </button>
-                </div>
-
                 {/* 過去の旅行計画 */}
                 <div className="bg-white rounded-lg shadow-lg p-6">
                     <h2 className="text-xl font-semibold text-gray-900 mb-4">過去の旅行計画</h2>
