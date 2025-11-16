@@ -62,7 +62,7 @@ describe("Authentication Flow Integration Tests", () => {
             await user.type(passwordInput, "validpassword");
 
             // フォーム送信
-            const submitButton = screen.getByRole("button", { name: /ログイン/ });
+            const submitButton = screen.getByRole("button", { name: "ログイン" });
             await user.click(submitButton);
 
             // authenticate が呼ばれることを確認
@@ -99,7 +99,7 @@ describe("Authentication Flow Integration Tests", () => {
 
             render(<LoginForm />);
 
-            const submitButton = screen.getByRole("button", { name: /ログイン/ });
+            const submitButton = screen.getByRole("button", { name: "ログイン" });
             expect(submitButton).toHaveAttribute("aria-disabled", "true");
         });
 
@@ -118,8 +118,7 @@ describe("Authentication Flow Integration Tests", () => {
             // フォームは有効で再送信可能
             const usernameInput = screen.getByLabelText(/ユーザー名/);
             const passwordInput = screen.getByLabelText(/パスワード/);
-            const submitButton = screen.getByRole("button", { name: /ログイン/ });
-
+            const submitButton = screen.getByRole("button", { name: "ログイン" });
             expect(usernameInput).not.toBeDisabled();
             expect(passwordInput).not.toBeDisabled();
             expect(submitButton).not.toBeDisabled();
